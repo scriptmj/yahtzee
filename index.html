@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opdracht 13 - JavaScript Yahtzee</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="bodyContent">
+    <br />
+    <div id="gameover"></div>
+    <button onclick="gooiDobbelstenen()" class="gooiButton">Gooien!</button>
+    <br />
+    <br />
+    <table class="worp">
+        <tr>
+            <td class="worpResultaat"></td>
+            <td class="worpResultaat"></td>
+            <td class="worpResultaat"></td>
+            <td class="worpResultaat"></td>
+            <td class="worpResultaat"></td>
+        </tr>
+    </table>
+    <br />
+
+    <h2>Scoreblok</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Deel 1</th>
+                <th>Puntentelling</th>
+                <th>Punten</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Enen</td>
+                <td>Tel alle enen op</td>
+                <td class="points unlocked" id="enenScore" onclick="tmplockScore(this)">0</td>
+            </tr>
+            <tr>
+                <td>Tweeën</td>
+                <td>Tel alle tweeën op</td>
+                <td class="points unlocked" id="tweeenScore" onclick="tmplockScore(this)">0</td>
+            </tr>
+            <tr>
+                <td>Drieën</td>
+                <td>Tel alle drieën op</td>
+                <td class="points unlocked" id="drieenScore" onclick="tmplockScore(this)">0</td>
+            </tr>
+            <tr>
+                <td>Vieren</td>
+                <td>Tel alle vieren op</td>
+                <td class="points unlocked" id="vierenScore" onclick="tmplockScore(this)">0</td>
+            </tr>
+            <tr>
+                <td>Vijven</td>
+                <td>Tel alle vijven op</td>
+                <td class="points unlocked" id="vijvenScore" onclick="tmplockScore(this)">0</td>
+            </tr>
+            <tr>
+                <td>Zessen</td>
+                <td>Tel alle zessen op</td>
+                <td class="points unlocked" id="zessenScore" onclick="tmplockScore(this)">0</td>
+            </tr>
+            <tr>
+                <td colspan="2">Totaal aantal punten</td>
+                <td class="points unlocked" id="eersteTotaal">0</td>
+            </tr>
+            <tr>
+                <td>Extra bonus <span class="small">Als puntentotaal 63 of meer is</span></td>
+                <td>35 punten</td>
+                <td class="points unlocked" id="extraBonusScore">0</td>
+            </tr>
+            <tr>
+                <td colspan="2">Totaal <span class="small">Van de bovenste helft</span></td>
+                <td class="points unlocked" id="bovensteHelftTotaalScore">0</td>
+            </tr>
+        </tbody>
+        <thead>
+            <tr>
+                <th colspan="3">Deel 2</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Three of a kind</td>
+                <td>Totaal v.d. 5 stenen</td>
+                <td class="points unlocked" id="threeOfAKindScore" onclick="tmplockScore(this)">0</td>
+            </tr>
+            <tr>
+                <td>Carré</td>
+                <td>Totaal v.d. 5 stenen</td>
+                <td class="points unlocked" id="carreScore" onclick="tmplockScore(this)">0</td>
+            </tr>
+            <tr>
+                <td>Full house</td>
+                <td>25 punten</td>
+                <td class="points unlocked" id="fullHouseScore" onclick="tmplockScore(this)">0</td>
+            </tr>
+            <tr>
+                <td>Kleine straat</td>
+                <td>30 punten</td>
+                <td class="points unlocked" id="kleineStraatScore" onclick="tmplockScore(this)">0</td>
+            </tr>
+            <tr>
+                <td>Grote straat</td>
+                <td>40 punten</td>
+                <td class="points unlocked" id="groteStraatScore" onclick="tmplockScore(this)">0</td>
+            </tr>
+            <tr>
+                <td>Yahtzee</td>
+                <td>50 punten</td>
+                <td class="points unlocked" id="yahtzeeScore" onclick="tmplockScore(this)">0</td>
+            </tr>
+            <tr>
+                <td>Chance</td>
+                <td class=>Totaal v.d. 5 stenen</td>
+                <td class="points unlocked" id="chanceScore" onclick="tmplockScore(this)">0</td>
+            </tr>
+            <tr>
+                <td colspan="2">Totaal <span class="small">Deel 2</span></td>
+                <td class="points unlocked" id="totaalDeel2Score">0</td>
+            </tr>
+            <tr>
+                <td colspan="2">Totaal <span class="small">Deel 1</span></td>
+                <td class="points unlocked" id="totaalDeel1Score">0</td>
+            </tr>
+            <tr>
+                <td colspan="2">Totaal</td>
+                <td class="points unlocked" id="totaalScore">0</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
